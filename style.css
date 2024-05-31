@@ -1,5 +1,4 @@
 /* Basic styling for the navigation bar */
-
 nav {
     background-color: white;
     padding: 10px 20px;
@@ -24,23 +23,39 @@ nav ul li a {
     text-decoration: none;
 }
 nav div img {
-    width: 120px;
+    width: 200px;
     height: auto;
     margin-bottom: -12px;
+    margin-left: 20px;
 }
 /* Styling for login and signup buttons */
 .btn-login,
 .btn-signup {
-    padding: 8px 12px;
-    background-color: #4CAF50;
+    padding: 12px 20px;  
+    background-color: #4CAF50;  
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;  
     cursor: pointer;
     text-decoration: none;
+    color: white;
+    font-size: 18px; 
+    font-weight: bold;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, transform 0.3s; 
+    margin-right: 40px;
 }
+
 .btn-login:hover,
 .btn-signup:hover {
     background-color: #45a049;
+    transform: scale(1.05); 
+}
+
+/* Active state for buttons */
+.btn-login:active,
+.btn-signup:active {
+    background-color: #3e8e41; 
+    transform: scale(1);  
 }
 /* Basic styling for the footer */
 footer {
@@ -58,48 +73,97 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Styling for the box */
 .box {
-    width: 1600px;
-    height: 700px;
+    max-width: 100%;
+    width: 100%;
+    max-width: 1500px;
     padding: 20px;
-    margin-top: 200px;
-    margin-left: 400px;
     background-color: #F1EFE7;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
 /* Styling for the image */
 .box img {
+    max-width: 100%;
     width: 500px; 
-    float: left;
+    height: auto;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 /* Styling for the content */
 .content {
-    overflow: hidden; /* Clear the float */
+    max-width: 100%;
+    flex: 1; /* Allow content to grow and shrink */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    overflow: hidden;
 }
 
 /* Styling for the header */
 .content h2 {
-    margin-top: 160px;
-    margin-left: 0px;
-    font-size: 90px;
+    margin-top: 20px;
+    font-size: 5vw;
     text-align: center;
 }
 
 /* Styling for the smaller text */
 .content p {
-    margin-bottom: 0;
+    margin-bottom: 15;
+    text-align: center;
 }
 
 .smallbox {
-    background-color: white;
-    padding: 10px;
-    margin-left: 380px;
-    width: 300px;
-    font-size: 23px;
+    background-color: rgb(123, 118, 126); 
+    padding: 20px; 
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 20px;  
+    text-align: center;
+    border-radius: 3.5%;  
+    color: white;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    transition: transform 0.3s; 
+}
+
+/* Hover effect for smallbox */
+.smallbox:hover {
+    transform: scale(1.05);  
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    nav div img {
+        margin-bottom: 0;
+    }
+    .box {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .box img {
+        margin-right: 0;
+    }
+    .content h2 {
+        font-size: 7vw;
+    }
 }
